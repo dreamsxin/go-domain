@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 package main
@@ -6,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/weppos/publicsuffix-go/publicsuffix"
+	"github.com/dreamsxin/go-domain/publicsuffix"
 )
 
 func main() {

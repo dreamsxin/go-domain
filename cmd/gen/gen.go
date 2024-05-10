@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // gen downloads an updated version of the PSL list and compiles it into go code.
@@ -7,7 +8,7 @@
 package main
 
 import (
-	"github.com/weppos/publicsuffix-go/publicsuffix/generator"
+	"github.com/dreamsxin/go-domain/publicsuffix/generator"
 )
 
 const (

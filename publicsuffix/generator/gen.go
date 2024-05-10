@@ -17,8 +17,8 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/dreamsxin/go-domain/publicsuffix"
 	"github.com/google/go-github/v50/github"
-	"github.com/weppos/publicsuffix-go/publicsuffix"
 )
 
 const (

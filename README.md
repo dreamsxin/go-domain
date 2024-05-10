@@ -2,8 +2,8 @@
 
 The package <tt>publicsuffix</tt> provides a Go domain name parser based on the [Public Suffix List](http://publicsuffix.org/).
 
-[![Tests](https://github.com/weppos/publicsuffix-go/workflows/Tests/badge.svg)](https://github.com/weppos/publicsuffix-go/actions?query=workflow%3ATests)
-[![GoDoc](https://godoc.org/github.com/weppos/publicsuffix-go/publicsuffix?status.svg)](https://pkg.go.dev/github.com/weppos/publicsuffix-go/publicsuffix)
+[![Tests](https://github.com/dreamsxin/go-domain/workflows/Tests/badge.svg)](https://github.com/dreamsxin/go-domain/actions?query=workflow%3ATests)
+[![GoDoc](https://godoc.org/github.com/dreamsxin/go-domain/publicsuffix?status.svg)](https://pkg.go.dev/github.com/dreamsxin/go-domain/publicsuffix)
 
 Currently, **publicsuffix-go requires Go version 1.9 or greater**. We do our best not to break older versions of Go if we don't have to, but due to tooling constraints, we don't always test older versions.
 
@@ -14,7 +14,7 @@ Clone the repository [in your workspace](https://golang.org/doc/code.html#Organi
 
 ```shell
 mkdir -p $GOPATH/src/github.com/weppos && cd $_
-git clone git@github.com:weppos/publicsuffix-go.git
+git clone git@github.com:dreamsxin/go-domain.git
 cd publicsuffix-go
 ```
 
@@ -49,7 +49,7 @@ There are 3 different test suites built into this library:
 ## Installation
 
 ```shell
-go get github.com/weppos/publicsuffix-go
+go get github.com/dreamsxin/go-domain
 ```
 
 
@@ -63,7 +63,7 @@ package main
 import (
     "fmt"
 
-    "github.com/weppos/publicsuffix-go/publicsuffix"
+    "github.com/dreamsxin/go-domain/publicsuffix"
 )
 
 func main() {
@@ -125,7 +125,7 @@ Although the PSL list has been traditionally U-label encoded, this library follo
 
 Passing Unicode names to the library may either result in error or unexpected behaviors.
 
-If you are interested in the details of this decision, you can read the full discussion [here](https://github.com/weppos/publicsuffix-go/issues/31).
+If you are interested in the details of this decision, you can read the full discussion [here](https://github.com/dreamsxin/go-domain/issues/31).
 
 
 ## Differences with `golang.org/x/net/publicsuffix`
@@ -156,13 +156,13 @@ to
 
 ```go
 import (
-    "github.com/weppos/publicsuffix-go/net/publicsuffix"
+    "github.com/dreamsxin/go-domain/net/publicsuffix"
 )
 ```
 
-The `github.com/weppos/publicsuffix-go/net/publicsuffix` package defines the same methods defined in `golang.org/x/net/publicsuffix`, but these methods are implemented using the `github.com/weppos/publicsuffix-go/publicsuffix` package.
+The `github.com/dreamsxin/go-domain/net/publicsuffix` package defines the same methods defined in `golang.org/x/net/publicsuffix`, but these methods are implemented using the `github.com/dreamsxin/go-domain/publicsuffix` package.
 
-Note that the adapter doesn't offer the flexibility of `github.com/weppos/publicsuffix-go/publicsuffix`, such as the ability to use multiple lists or disable private domains at runtime.
+Note that the adapter doesn't offer the flexibility of `github.com/dreamsxin/go-domain/publicsuffix`, such as the ability to use multiple lists or disable private domains at runtime.
 
 
 ## `cookiejar.PublicSuffixList` interface
@@ -172,7 +172,7 @@ This package implements the [`cookiejar.PublicSuffixList` interface](https://god
 ```go
 import (
     "net/http/cookiejar"
-    "github.com/weppos/publicsuffix-go/publicsuffix"
+    "github.com/dreamsxin/go-domain/publicsuffix"
 )
 
 deliciousJar := cookiejar.New(&cookiejar.Options{PublicSuffixList: publicsuffix.CookieJarList})

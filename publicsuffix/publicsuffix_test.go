@@ -549,3 +549,20 @@ func BenchmarkDomain(b *testing.B) {
 func BenchmarkXNet(b *testing.B) {
 	benchmarkDomain(b, xlib.EffectiveTLDPlusOne)
 }
+
+func TestDomain(t *testing.T) {
+	testCases := map[string]string{
+		"example.com":            "example.com",
+		"www.example.com":        "example.com",
+		"example.com:80":         "example.com",
+		"http://example.com":     "example.com",
+		"http://www.example.com": "example.com",
+		"http://example.com:80":  "example.com",
+	}
+
+	for input, domain := range testCases {
+		if output, _ := Domain(input); output != domain {
+			t.Errorf("Domain(%v) = %v, want %v", input, output, domain)
+		}
+	}
+}

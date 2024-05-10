@@ -3,7 +3,7 @@
 package publicsuffix
 
 import (
-	psl "github.com/weppos/publicsuffix-go/publicsuffix"
+	psl "github.com/dreamsxin/go-domain/publicsuffix"
 )
 
 // PublicSuffix returns the public suffix of the domain

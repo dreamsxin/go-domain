@@ -1,4 +1,4 @@
-module github.com/weppos/publicsuffix-go
+module github.com/dreamsxin/go-domain
 
 go 1.16
 
